@@ -9,7 +9,7 @@ const NewArrival = () => {
     return (
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Men's Collection</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">New Arrivals</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {menProducts.map((product, index) => (
               <div key={index} className="relative group overflow-hidden">

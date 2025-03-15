@@ -9,7 +9,7 @@ const Women = () => {
     return (
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Men's Collection</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Women's Collection</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {WomenProducts.map((product, index) => (
               <div key={index} className="relative group overflow-hidden">

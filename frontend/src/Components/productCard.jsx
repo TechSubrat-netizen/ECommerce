@@ -1,39 +1,47 @@
 import React from 'react';
 import { Heart } from 'lucide-react';
 
-const ProductCard = ({ product }) => {
+const ProductCard = () => {
+  let product={name:"Akash",
+    image:"#",
+    price:400
+  
+  }
+  function addtocart(){
+
+  }
   return (
-    <div className="group">
-      <div className="relative mb-4 overflow-hidden">
+    <div className="group relative bg-white rounded-xl shadow-md overflow-hidden transition-transform transform hover:scale-105">
+      <div className="relative">
         <img 
           src={product.image} 
           alt={product.name} 
-          className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition duration-500"
+          className="w-full h-64 object-cover"
         />
         {product.discount && (
-          <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1">
+          <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
             {product.discount}% OFF
-          </div>
+          </span>
         )}
-        <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 translate-y-full group-hover:translate-y-0">
-          <button className="w-full bg-white text-black py-2 font-medium hover:bg-gray-100 transition duration-300">
-            Add to Cart
-          </button>
-        </div>
-        <button className="absolute top-2 right-2 text-gray-700 bg-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition duration-300">
-          <Heart size={16} />
+        <button className="absolute top-3 right-3 bg-white text-gray-700 rounded-full p-2 shadow-md opacity-80 hover:opacity-100 transition">
+          <Heart size={18} />
         </button>
       </div>
-      <h3 className="text-gray-900 font-medium mb-1">{product.name}</h3>
-      <div className="flex items-center">
-        {product.discount ? (
-          <>
-            <span className="text-red-600 font-semibold">${(product.price * (1 - product.discount / 100)).toFixed(2)}</span>
-            <span className="text-gray-500 line-through ml-2">${product.price}</span>
-          </>
-        ) : (
-          <span className="text-gray-900 font-semibold">${product.price}</span>
-        )}
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-gray-900 truncate">{product.name}</h3>
+        <div className="flex items-center mt-2">
+          {product.discount ? (
+            <>
+              <span className="text-red-600 font-bold text-lg">${(product.price * (1 - product.discount / 100)).toFixed(2)}</span>
+              <span className="text-gray-500 line-through ml-2">${product.price}</span>
+            </>
+          ) : (
+            <span className="text-gray-900 font-bold text-lg">${product.price}</span>
+          )}
+        </div>
+        <button className="w-full mt-4 bg-gray-900 text-white py-2 rounded-lg font-medium hover:bg-gray-700 transition">
+          Add to Cart
+        </button>
       </div>
     </div>
   );

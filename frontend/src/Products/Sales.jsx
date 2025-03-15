@@ -1,4 +1,4 @@
-const SalesProducts = () => {
+const Sales = () => {
     const SalesProducts = [
       { name: "Classic Shirt", image: "/api/placeholder/600/800" },
       { name: "Casual T-Shirt", image: "/api/placeholder/600/800" },
@@ -9,7 +9,7 @@ const SalesProducts = () => {
     return (
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Men's Collection</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Sales going on upto 50% discount</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {SalesProducts.map((product, index) => (
               <div key={index} className="relative group overflow-hidden">
@@ -31,4 +31,4 @@ const SalesProducts = () => {
     );
   };
   
-  export  default SalesProducts
+  export  default Sales

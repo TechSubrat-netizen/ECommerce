@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Signin = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -22,7 +23,7 @@ const Signin = () => {
               <label>
                 <input type="checkbox" className="mr-1" /> Remember Me
               </label>
-              <Link to="/forgot-password" className="text-blue-600 hover:underline">
+              <Link to="/forgotpassword" className="text-blue-600 hover:underline">
                 Forgot Password?
               </Link>
             </div>
