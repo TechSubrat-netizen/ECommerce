@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Heart } from 'lucide-react';
+import { CartContext } from '../Context/cartContext';
 
 const ProductCard = () => {
-  let product={name:"Akash",
-    image:"#",
-    price:400
-  
+  let product={
+    name:"iphone",
+    price:400,
+    quantity:1,
+    discount:40,
+    img:"#"
   }
-  function addtocart(){
+ 
+   const {item,setItem}=useContext(CartContext)
+   function  addCart(){
+    let cart={
+      name:product.name,
+      price:product.price,
+      quqntity:product.quantity,
+      img:product.img
+    }
+    setItem(...item,cart)
 
-  }
+   }
+ 
   return (
     <div className="group relative bg-white rounded-xl shadow-md overflow-hidden transition-transform transform hover:scale-105">
       <div className="relative">
@@ -39,7 +52,7 @@ const ProductCard = () => {
             <span className="text-gray-900 font-bold text-lg">${product.price}</span>
           )}
         </div>
-        <button className="w-full mt-4 bg-gray-900 text-white py-2 rounded-lg font-medium hover:bg-gray-700 transition">
+        <button className="w-full mt-4 bg-gray-900 text-white py-2 rounded-lg font-medium hover:bg-gray-700 transition" onClick={addCart}>
           Add to Cart
         </button>
       </div>

@@ -1,21 +1,36 @@
-const Cart= ({ cartItems }) => {
-    return (
-      <div className="fixed top-0 right-0 w-80 bg-white shadow-lg p-4 h-screen overflow-y-auto">
-        <h2 className="text-lg font-bold mb-4">Shopping Cart</h2>
-        {cartItems.length > 0 ? (
-          cartItems.map((item, index) => (
-            <div key={index} className="flex items-center border-b py-2">
-              <img src={item.image} alt={item.name} className="w-16 h-16 object-cover rounded-md" />
-              <div className="ml-4">
-                <h3 className="text-sm font-medium">{item.name}</h3>
-                <p className="text-gray-600">${item.price}</p>
+/* eslint-disable no-undef */
+
+import { useContext } from "react";
+import { CartContext } from "../Context/cartContext";
+
+
+
+export default function CartPage() {
+   const {item}= useContext(CartContext)
+
+  return (
+    <div className="container mx-auto p-6">
+      <h2 className="text-2xl font-semibold mb-4">Shopping Cart</h2>
+      
+        <div className="space-y-4">
+          
+           {item.length>0 && <div className="flex justify-between items-center p-4 border rounded-lg shadow">
+              <div>
+                <h3 className="text-lg font-medium">itemName</h3>
+                <p className="text-gray-600">Price: Itemprice</p>
+                <p className="text-gray-600">Quantity: itemQuantity</p>
               </div>
+              <button
+              
+                className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
+              >
+                Remove
+              </button>
             </div>
-          ))
-        ) : (
-          <p className="text-gray-500">Your cart is empty.</p>
-        )}
-      </div>
-    );
-  };
-export default Cart;
+           }
+         
+        </div>
+     
+    </div>
+  );
+}

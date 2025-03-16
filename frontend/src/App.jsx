@@ -10,6 +10,7 @@ import Accesories from "./Products/Accesories"
 import Signin from "./Pages/Signin"
 import Signup from "./Pages/Signup"
 import ForgetPassword from "./Pages/Forgetpassword"
+import Cart from "./Pages/Cart"
 
 
 
@@ -29,6 +30,7 @@ function App() {
     <Route path="/signin" element={<Signin />} />
     <Route path="/signup" element={<Signup/>}></Route>
     <Route path="/forgotpassword" element={<ForgetPassword/>}></Route>
+    <Route path="/cart" element={<Cart/>}></Route>
     </Route>
     </Routes>
     </BrowserRouter>
