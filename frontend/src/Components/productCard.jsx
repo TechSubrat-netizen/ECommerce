@@ -13,13 +13,8 @@ const ProductCard = () => {
  
    const {item,setItem}=useContext(CartContext)
    function  addCart(){
-    let cart={
-      name:product.name,
-      price:product.price,
-      quqntity:product.quantity,
-      img:product.img
-    }
-    setItem(...item,cart)
+    
+    setItem(prevItems => [...prevItems, product]);
 
    }
  
@@ -27,7 +22,7 @@ const ProductCard = () => {
     <div className="group relative bg-white rounded-xl shadow-md overflow-hidden transition-transform transform hover:scale-105">
       <div className="relative">
         <img 
-          src={product.image} 
+          src={product.img} 
           alt={product.name} 
           className="w-full h-64 object-cover"
         />
