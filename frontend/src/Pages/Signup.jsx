@@ -6,7 +6,7 @@ const Signup = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
         <h2 className="text-2xl font-bold text-center mb-4">Create an Account</h2>
-        <form className="space-y-4">
+        <form className="space-y-4" action="http://localhost:5000/user/signup" method="POSt">
           
           {/* Full Name */}
           <div>
@@ -14,7 +14,7 @@ const Signup = () => {
             <input
               type="text"
               id="name"
-              name="name"
+              name="FullName"
               placeholder="Enter your full name"
               className="w-full p-2 border rounded-md"
               required
@@ -27,7 +27,7 @@ const Signup = () => {
             <input
               type="email"
               id="email"
-              name="email"
+              name="Email"
               placeholder="Enter your email"
               className="w-full p-2 border rounded-md"
               required
@@ -40,7 +40,7 @@ const Signup = () => {
             <input
               type="tel"
               id="phone"
-              name="phone"
+              name="PhoneNumber"
               placeholder="Enter your phone number"
               className="w-full p-2 border rounded-md"
               pattern="[0-9]{10}"
@@ -54,13 +54,13 @@ const Signup = () => {
             <label className="block font-medium">Gender</label>
             <div className="flex items-center space-x-4">
               <label>
-                <input type="radio" name="gender" value="Male" required /> Male
+                <input type="radio" name="Gender" value="Male" required /> Male
               </label>
               <label>
-                <input type="radio" name="gender" value="Female" required /> Female
+                <input type="radio" name="Gender" value="Female" required /> Female
               </label>
               <label>
-                <input type="radio" name="gender" value="Other" required /> Other
+                <input type="radio" name="Gender" value="Other" required /> Other
               </label>
             </div>
           </div>
@@ -70,7 +70,7 @@ const Signup = () => {
             <label htmlFor="address" className="block font-medium">Address</label>
             <textarea
               id="address"
-              name="address"
+              name="Address"
               rows="3"
               placeholder="Enter your full address"
               className="w-full p-2 border rounded-md"
@@ -84,7 +84,7 @@ const Signup = () => {
             <input
               type="password"
               id="password"
-              name="password"
+              name="Password"
               placeholder="Enter your password"
               className="w-full p-2 border rounded-md"
               required
@@ -96,8 +96,8 @@ const Signup = () => {
             <label htmlFor="confirmPassword" className="block font-medium">Confirm Password</label>
             <input
               type="password"
-              id="confirmPassword"
-              name="confirmPassword"
+              id="ConfirmPassword"
+              name="ConfirmPassword"
               placeholder="Re-enter your password"
               className="w-full p-2 border rounded-md"
               required
