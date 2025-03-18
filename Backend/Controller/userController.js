@@ -16,11 +16,17 @@ let saltRound=10
         
        let data= req.body
        let password=data.Password;
+       //Verifying user already present or not
+       let existingUser= await userModel .findOne({Email:data.Email})
+       if(existingUser){
+         res.status(409).json({msg:"user is already exist"})
+       }
+       else{
        let hashedpassword=await bcrypt.hash(password,saltRound)
-      let userDetails= await userModel.insertOne({...data,Password:hashedpassword})
-      console.log(userDetails);
-      
+       await userModel.insertOne({...data,Password:hashedpassword})
        res.status(201).send("Data inserted succesfully")
+      }
+      
     } catch (error) {
         res.status(500).send({msg:"internal server error"})
     }
@@ -59,3 +65,4 @@ let saltRound=10
         
     }
    }
+   
